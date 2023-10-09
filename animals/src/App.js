@@ -1,11 +1,18 @@
 import { useState } from 'react';
 
+function getRandomAnimal() {
+    const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse']
+
+    return animals[Math.floor(Math.random() * animals.length)]
+}
 
 function App(){
-    const [count, setCount] = useState(0);
+    const [animals, setAnimals] = useState([]);
 
     const handleClick = () => {
-        setCount(count + 1);
+        //Updates a piece of state (must use setAnimals)
+        //Creates a new array and takes exisiting elements and puts it into a new array
+        setAnimals([...animals, getRandomAnimal()])
     };
 
     return (
@@ -14,7 +21,7 @@ function App(){
             {/* Line below is another way of defining the function with a reference*/}
             {/* onClick = {() => console.log('Button was clicked')} */}
 
-            <div>Number of animals: {count} </div>
+  
         </div>
     );
 }
