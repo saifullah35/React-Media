@@ -1,15 +1,20 @@
+import { useState } from 'react';
+
+
 function App(){
+    const [count, setCount] = useState(0);
+
     const handleClick = () => {
-        console.log('Button was clicked!')
+        setCount(count + 1);
     };
 
     return (
         <div>
-            {/*  */}
-            {/* {() => console.log('Button was clicked')} */}
             <button onClick = {handleClick}>Add Animal</button>
             {/* Line below is another way of defining the function with a reference*/}
             {/* onClick = {() => console.log('Button was clicked')} */}
+
+            <div>Number of animals: {count} </div>
         </div>
     );
 }
