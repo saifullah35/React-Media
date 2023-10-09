@@ -1,5 +1,6 @@
 import AnimalShow from './AnimalShow';
 import { useState } from 'react';
+import './App.css';
 
 function getRandomAnimal() {
     const animals = ['bird', 'cat', 'cow', 'dog', 'gator', 'horse']
@@ -24,11 +25,11 @@ function App(){
     });
 
     return (
-        <div>
+        <div className = "app">
             {/* Line below is another way of defining the function with a reference*/}
             {/* onClick = {() => console.log('Button was clicked')} */}
             <button onClick = {handleClick}>Add Animal</button>
-            <div>{renderedAnimals}</div>
+            <div className = "animal-list">{renderedAnimals}</div>
         </div>
     );
 }
