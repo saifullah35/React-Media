@@ -22,6 +22,8 @@ function CarForm() {
     const handleSubmit = (event) => {
         event.preventDefault(); //prevents the page from reloading
         dispatch(addCar({ name, cost}));
+        dispatch(changeCost(0));
+        dispatch(changeName(''));
     };
 
     return (
